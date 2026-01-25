@@ -1,11 +1,8 @@
 {
-  "buildCommand": "npm run build",
-  "rewrites": [
-    {
-      "source": "/:path*/",
-      "destination": "/:path*"
-    }
-  ],
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "devCommand": "next dev",
+  "installCommand": "npm install",
   "headers": [
     {
       "source": "/(.*)",

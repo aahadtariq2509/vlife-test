@@ -6,7 +6,8 @@ const apiUrlObj = new URL(apiUrl);
 const nextConfig = {
   // Configuration for S3 static export
   // output: 'export',
-  trailingSlash: true,
+  // Disabled trailingSlash for Vercel compatibility
+  trailingSlash: false,
 
   // Disable React StrictMode to prevent double API calls in development
   // Note: StrictMode helps catch bugs but causes double renders/mounts in dev mode
