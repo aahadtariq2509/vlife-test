@@ -1,0 +1,22 @@
+# AWS Configuration
+S3_BUCKET_NAME=your-s3-bucket-name
+S3_STAGING_BUCKET=your-staging-s3-bucket-name
+S3_PROD_BUCKET=your-production-s3-bucket-name
+AWS_REGION=ap-southeast-1
+CLOUDFRONT_DISTRIBUTION_ID=your-cloudfront-distribution-id
+
+# API Configuration
+NEXT_PUBLIC_API_URL=https://your-api-domain.com
+NEXT_PUBLIC_BACKEND_API_URL=https://your-backend-api-domain.com
+
+# Environment
+NODE_ENV=production
+
+# Feature Flags
+NEXT_PUBLIC_ENABLE_ANALYTICS=true
+NEXT_PUBLIC_ENABLE_DEBUG_MODE=false
+
+# External Services (if needed)
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_your_stripe_key
+NEXT_PUBLIC_GOOGLE_CLIENT_ID=your_google_client_id
+NEXT_PUBLIC_FACEBOOK_APP_ID=your_facebook_app_id

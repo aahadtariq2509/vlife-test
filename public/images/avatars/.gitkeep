@@ -1,0 +1,5 @@
+# This file ensures the avatars directory is tracked by git
+# Add your default avatar files here:
+# - default-avatar.png
+# - default-avatar-male.png
+# - default-avatar-female.png

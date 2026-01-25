@@ -1,0 +1,29 @@
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" rx="24" fill="#3B82F6"/>
+  <path
+    d="M24 8C32.8366 8 40 15.1634 40 24C40 32.8366 32.8366 40 24 40C15.1634 40 8 32.8366 8 24C8 15.1634 15.1634 8 24 8Z"
+    stroke="white"
+    stroke-width="2"
+    fill="none"
+  />
+  <path
+    d="M24 12C29.5228 12 34 16.4772 34 22C34 27.5228 29.5228 32 24 32C18.4772 32 14 27.5228 14 22C14 16.4772 18.4772 12 24 12Z"
+    stroke="white"
+    stroke-width="2"
+    fill="none"
+  />
+  <text 
+    x="24" 
+    y="30" 
+    font-family="Arial, sans-serif" 
+    font-size="13" 
+    font-weight="bold" 
+    fill="white" 
+    text-anchor="middle" 
+    dominant-baseline="middle"
+    style="letter-spacing: 0.5px;"
+  >
+    VLW
+  </text>
+</svg>
+

@@ -1,0 +1,6 @@
+# This file ensures the illustrations directory is tracked by git
+# Add your illustration files here:
+# - dashboard-hero.svg
+# - login-illustration.svg
+# - empty-state.svg
+# - error-404.svg

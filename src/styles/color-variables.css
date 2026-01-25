@@ -1,0 +1,76 @@
+/**
+ * Minimal CSS Color Variables
+ * Only includes colors actually used in the application
+ */
+
+:root {
+  /* Primary Colors - Only used variants */
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+
+  /* Blue Colors - Only used variants */
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+
+  /* Gray Colors - Only used variants */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Input specific colors */
+  --color-input-bg: #F3F3F3;
+  --color-input-text: #111827;
+  --color-input-placeholder: #9ca3af;
+  --color-input-icon: #9ca3af;
+
+  /* Button specific colors - Improved contrast for accessibility */
+  --color-button-primary-bg: #2563eb;  /* Darker blue for better contrast */
+  --color-button-primary-text: #FFFFFF;
+  --color-button-primary-hover: #1d4ed8;  /* Even darker on hover */
+  --color-button-primary-active: #1e40af;  /* Darkest on active */
+
+  /* Success Colors */
+  --color-green-500: #10b981;
+  --color-green-600: #059669;
+
+  /* Error Colors */
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+
+  /* Warning Colors */
+  --color-yellow-500: #f59e0b;
+  --color-yellow-600: #d97706;
+
+  /* Chart Card Colors */
+  --color-chart-card-bg: #FFFFFF;
+  --color-chart-card-border: #DFDFDF;
+  --color-chart-card-title: #000000;
+  --color-dropdown-text: #000000;
+  --color-dropdown-border: #DFDFDF;
+  --color-dropdown-arrow: #242424;
+
+  /* Chart Card Dimensions */
+  --chart-card-width: 506px;
+  --chart-card-height: 383px;
+  --chart-card-border-radius: 20px;
+  --chart-card-border-width: 0.5px;
+  --chart-title-width: 133px;
+  --chart-title-height: 27px;
+  --chart-title-font-size: 18px;
+  --dropdown-width: 108px;
+  --dropdown-height: 32px;
+  --dropdown-border-radius: 16px;
+  --dropdown-text-width: 30px;
+  --dropdown-text-height: 18px;
+  --dropdown-arrow-width: 5.28px;
+  --dropdown-arrow-height: 10px;
+}
