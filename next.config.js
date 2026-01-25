@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://vlifew.com';
+const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://vlifew.com";
 const apiUrlObj = new URL(apiUrl);
 
 const nextConfig = {
   // Configuration for S3 static export
-  output: 'export',
+  // output: 'export',
   trailingSlash: true,
 
   // Disable React StrictMode to prevent double API calls in development
@@ -17,16 +17,16 @@ const nextConfig = {
     unoptimized: true,
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'vlifewrapper-dev.s3.ap-southeast-1.amazonaws.com',
-        port: '',
-        pathname: '/dashboard/**',
+        protocol: "https",
+        hostname: "vlifewrapper-dev.s3.ap-southeast-1.amazonaws.com",
+        port: "",
+        pathname: "/dashboard/**",
       },
       {
-        protocol: apiUrlObj.protocol.replace(':', ''),
+        protocol: apiUrlObj.protocol.replace(":", ""),
         hostname: apiUrlObj.hostname,
-        port: apiUrlObj.port || '',
-        pathname: '/uploads/**',
+        port: apiUrlObj.port || "",
+        pathname: "/uploads/**",
       },
     ],
   },
@@ -40,7 +40,7 @@ const nextConfig = {
     if (dev) {
       // Use a more reliable cache strategy to prevent ENOENT errors
       config.cache = {
-        type: 'filesystem',
+        type: "filesystem",
         buildDependencies: {
           config: [__filename],
         },
@@ -48,6 +48,6 @@ const nextConfig = {
     }
     return config;
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
