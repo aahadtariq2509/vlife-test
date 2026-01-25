@@ -12,10 +12,16 @@ export default function HomePage() {
   const { isAuthenticated, isLoading } = useAuth();
   const [showWelcome, setShowWelcome] = useState(false);
   const [checkingWelcome, setCheckingWelcome] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Handle client-side mounting
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Check welcome screen status from localStorage
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (isMounted && typeof window !== 'undefined') {
       const welcomeScreenStatus = localStorage.getItem('welcomeScreen');
       // If welcomeScreen is null (first visit) or 'true', show welcome screen
       // If welcomeScreen is 'false', skip welcome screen
@@ -26,30 +32,37 @@ export default function HomePage() {
       }
       setCheckingWelcome(false);
     }
-  }, []);
+  }, [isMounted]);
 
   // Debug logging
-  console.log('HomePage: Auth state:', {
-    isAuthenticated,
-    isLoading,
-    hasLocalStorageToken: typeof window !== 'undefined' && !!localStorage.getItem('accessToken')
-  });
-  
-  // Additional debugging
-  console.log('HomePage: useAuth hook returned:', {
-    isAuthenticated,
-    isLoading,
-    typeofIsAuthenticated: typeof isAuthenticated,
-    isAuthenticatedValue: isAuthenticated
-  });
+  useEffect(() => {
+    if (isMounted) {
+      console.log('HomePage: Auth state:', {
+        isAuthenticated,
+        isLoading,
+        hasLocalStorageToken: typeof window !== 'undefined' && !!localStorage.getItem('accessToken')
+      });
+
+      // Additional debugging
+      console.log('HomePage: useAuth hook returned:', {
+        isAuthenticated,
+        isLoading,
+        typeofIsAuthenticated: typeof isAuthenticated,
+        isAuthenticatedValue: isAuthenticated
+      });
+    }
+  }, [isAuthenticated, isLoading, isMounted]);
 
   useEffect(() => {
+    // Only run redirects on client-side after mounting
+    if (!isMounted) return;
+
     // Check authentication status immediately
     if (!isLoading && !checkingWelcome) {
       if (isAuthenticated) {
         // If user is already authenticated, redirect to dashboard
         console.log('HomePage: User is authenticated, redirecting to dashboard');
-        router.push('/dashboards');
+        router.push('/dashboard');
       } else if (!showWelcome) {
         // Check if user is not on OAuth callback or verification pages before redirecting to login
         const isOnOAuthCallback = pathname === '/oauth/google/callback';
@@ -62,10 +75,10 @@ export default function HomePage() {
         }
       }
     }
-  }, [isAuthenticated, isLoading, showWelcome, checkingWelcome, router, pathname]);
+  }, [isAuthenticated, isLoading, showWelcome, checkingWelcome, router, pathname, isMounted]);
 
-  // Show loading while checking authentication status or welcome screen status
-  if (isLoading || checkingWelcome) {
+  // Show loading on server-side render and initial client mount
+  if (!isMounted || isLoading || checkingWelcome) {
     return <LoadingScreen />;
   }
 
